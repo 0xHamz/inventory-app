@@ -163,7 +163,7 @@ export default function DashboardContent() {
 
               {/* QR Code */}
               <div className="flex justify-center">
-                <QRCodeBox value={`${process.env.NEXT_PUBLIC_BASE_URL}/products/${product.id}`} />
+                <QRCodeBox value={`${process.env.NEXT_PUBLIC_BASE_URL}/public/products/${product.id}`}/>
               </div>
             </div>
           ))}
