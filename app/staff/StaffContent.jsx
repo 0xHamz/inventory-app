@@ -15,6 +15,7 @@ export default function StaffContent() {
   const role = "staff";
   const router = useRouter();
   const pathname = usePathname(); // pantau route saat ini
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
   // 🔹 Listener realtime untuk produk
   useEffect(() => {
@@ -86,7 +87,7 @@ export default function StaffContent() {
                 <StockForm productId={product.id} type="OUT" />
               </div>
               <div className="flex justify-center">
-                const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+                
 <QRCodeBox value={`${baseUrl}/products/${product.id}`} />
 
               </div>
