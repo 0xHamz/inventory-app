@@ -87,7 +87,6 @@ export default function StaffContent() {
               </div>
               <div className="flex justify-center">
                 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 <QRCodeBox value={`${baseUrl}/products/${product.id}`} />
 
               </div>
