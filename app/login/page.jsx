@@ -32,9 +32,9 @@ export default function LoginPage() {
         if (role === "admin") {
           router.push("/dashboard");
         } else if (role === "staff") {
-          router.push("/staff"); // bisa buat halaman staff khusus nanti
+          router.push("/staff");
         } else {
-          router.push("/"); // default fallback
+          router.push("/");
         }
 
       } else {
@@ -73,6 +73,13 @@ export default function LoginPage() {
         >
           Login
         </button>
+
+        {/* Info login contoh */}
+        <div className="mt-4 text-gray-600 text-sm bg-gray-100 p-2 rounded">
+          <p className="font-semibold">Login contoh untuk mencoba:</p>
+          <p>Email: <span className="font-medium">staff@gmail.com</span></p>
+          <p>Password: <span className="font-medium">121212</span></p>
+        </div>
       </div>
     </div>
   );
