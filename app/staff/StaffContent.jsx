@@ -88,7 +88,7 @@ export default function StaffContent() {
               </div>
               <div className="flex justify-center">
                 
-<QRCodeBox value={`${baseUrl}/products/${product.id}`} />
+              <QRCodeBox value={`${baseUrl}/products/${product.id}`} />
 
               </div>
             </div>
