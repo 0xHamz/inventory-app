@@ -16,25 +16,37 @@ export default function ProductDetailPage() {
   const role = "staff";
 
   // 🔹 Listener real-time untuk produk ini
-  useEffect(() => {
-    const docRef = doc(db, "products", productId);
-    const unsubscribe = onSnapshot(docRef, (docSnap) => {
-      if (docSnap.exists()) {
-        setProduct({ id: docSnap.id, ...docSnap.data() });
-      } else {
-        setProduct(null);
-      }
-    });
-    return () => unsubscribe();
-  }, [productId]);
+  const [loading, setLoading] = useState(true);
 
-  if (!product) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <p className="text-gray-500">Produk tidak ditemukan atau telah dihapus</p>
-      </div>
-    );
-  }
+useEffect(() => {
+  const docRef = doc(db, "products", productId);
+  const unsubscribe = onSnapshot(docRef, (docSnap) => {
+    if (docSnap.exists()) {
+      setProduct({ id: docSnap.id, ...docSnap.data() });
+    } else {
+      setProduct(null);
+    }
+    setLoading(false);
+  });
+  return () => unsubscribe();
+}, [productId]);
+
+if (loading) {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <p className="text-gray-500">Loading...</p>
+    </div>
+  );
+}
+
+if (!product) {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <p className="text-gray-500">Produk tidak ditemukan atau telah dihapus</p>
+    </div>
+  );
+}
+
 
   return (
     <div className="min-h-screen bg-gray-50">
