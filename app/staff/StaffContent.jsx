@@ -86,7 +86,10 @@ export default function StaffContent() {
                 <StockForm productId={product.id} type="OUT" />
               </div>
               <div className="flex justify-center">
-                <QRCodeBox value={`${process.env.NEXT_PUBLIC_BASE_URL}/products/${product.id}`} />
+                const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
+<QRCodeBox value={`${baseUrl}/products/${product.id}`} />
+
               </div>
             </div>
           ))}
