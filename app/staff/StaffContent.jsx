@@ -48,8 +48,24 @@ export default function StaffContent() {
         <h1 className="text-3xl font-bold mb-6 text-gray-800">Staff Dashboard</h1>
 
         {/* QR Scanner */}
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-6">
           <div id="reader" className="w-80" />
+        </div>
+
+        {/* Instruksi cara pakai */}
+        <div className="bg-white border rounded-xl shadow-md p-4 max-w-md mx-auto text-left space-y-2">
+          <h2 className="font-bold text-lg mb-2 text-center">Cara Menggunakan Scanner</h2>
+          <ol className="list-decimal list-inside text-gray-700">
+            <li>
+              <strong>Download QR Code</strong> dari link berikut:
+              <ul className="list-disc ml-5 mt-1">
+                <li><a href="https://ibb.co.com/m5FcxNh9" target="_blank" className="text-blue-600 underline">QR Link 1</a></li>
+                <li><a href="https://ibb.co.com/mrM6hQYh" target="_blank" className="text-blue-600 underline">QR Link 2</a></li>
+              </ul>
+            </li>
+            <li className="mt-2"><strong>Scan QR Code</strong> menggunakan kamera di atas dengan memilih file QR yang sudah di-download.</li>
+            <li className="mt-2">Setelah berhasil scan, <strong>detail produk</strong> akan otomatis muncul.</li>
+          </ol>
         </div>
       </main>
     </div>
